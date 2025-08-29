@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>60.0</apiVersion>
+  <isExposed>true</isExposed>
+
+  <targets>
+    <target>lightning__RecordPage</target>
+    <target>lightning__RecordAction</target>
+  </targets>
+
+  <targetConfigs>
+    <targetConfig targets="lightning__RecordPage">
+      <property name="parentObjectApiName" type="String" label="Parent Object API Name"
+                description="Author: Fuhad Hossain · API name of the parent object (used for backgroundContext)"/>
+      <property name="childObjectApiName" type="String" label="Child Object API Name"
+                description="Author: Fuhad Hossain · API name of the child object to create"/>
+      <property name="parentLookupFieldApiName" type="String" label="Parent Lookup Field API Name"
+                description="Author: Fuhad Hossain · Child lookup field that points to the parent (e.g., SR_Ingredient__c)"/>
+      <property name="recordTypeId" type="String" label="Record Type Id"
+                description="Author: Fuhad Hossain · Required if the child object does not have a default Record Type"/>
+      <property name="buttonLabel" type="String" label="Button Label"
+                description="Author: Fuhad Hossain · The label shown on the button"/>
+      <property name="alignment" type="String" label="Button Alignment (left, center, right)"
+                description="Author: Fuhad Hossain · Align the button inside its container"/>
+      <!-- Back-compat: present so old pages don't error; ignored by JS -->
+      <property name="namePrefix" type="String" label="(Deprecated) Name Prefix — leave blank"
+                description="Author: Fuhad Hossain · Deprecated. Leave empty; not used by the component."/>
+    </targetConfig>
+
+    <targetConfig targets="lightning__RecordAction">
+      <actionType>Action</actionType>
+    </targetConfig>
+  </targetConfigs>
+</LightningComponentBundle>
